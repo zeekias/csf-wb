@@ -16,7 +16,7 @@ export const Nav = styled.nav`
         font-weight: 500; 
         font-size: 14px;
         li{
-            cursor: pointer;
+            cursor: pointer; 
             span{
                 padding: 2rem 0;
                 height: 100%;

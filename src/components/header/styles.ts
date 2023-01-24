@@ -9,7 +9,7 @@ export const HeaderStyled = styled.header`
     }
 `
 
-export const TopBar = styled.div`
+export const TopBar = styled.div` 
     display: flex;
     padding: 16px 8%;
     justify-content: space-between;

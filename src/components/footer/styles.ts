@@ -45,7 +45,7 @@ export const FooterStyled = styled.footer`
 
                 ::after{
                     content: '';
-                    position: absolute;
+                    position: absolute; 
                     z-index:10;
                     bottom:3px;
                     left:0px;

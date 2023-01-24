@@ -15,7 +15,7 @@ export const TopBar = styled.div`
     justify-content: space-between;
     background-color: #252525;
 
-    .content{
+    .content{ 
         gap: 20px;
         font-size: 14px;
         font-weight: 500;

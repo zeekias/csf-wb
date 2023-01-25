@@ -158,32 +158,118 @@ export const SoluctionsSection = styled.section`
 
 export const HomeContactSection = styled.section`
     width: 100%;
-    padding: 0 8%;
-
+    padding: 90px 8%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg-conatct4.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .from-contact-section{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 34px;
+
+        .contact-title{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            color: white;
+            gap: 31px;
+            h2{
+                font-size: 32px;
+            }
+            p{
+                width: 100%;
+                text-align: justify;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .progress-bar{
+            width: 100%;
+            display: grid;
+            grid-template-areas: "a b c"
+                                 "d d d";
+            place-items: center;
+            place-content: center;
+
+            row-gap: 13px;
+
+
+           li{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            gap: 34px;
+
+            span{
+                text-transform: uppercase;
+                font-weight: 400;
+                color: white;
+                letter-spacing: 1px;
+                cursor: default;
+            }
+           }
+           .a{
+            grid-area: a;
+           }
+           .b{
+            grid-area: b;
+           }
+           .c{
+            grid-area: c;
+           }
+           .d{
+            width: 45%;
+            grid-area: d;
+           }
+        }
+    }
+
     .form{
+        background-color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-radius: 5px;
         width: 45%;
         .form-title{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
             width: 100%;
             padding: 5%;
             color: white;
             background-color: rgb(196, 51, 54);
-            border-top-right-radius: 13px;
-            border-top-left-radius: 13px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            h3{
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 30px;
+                letter-spacing: 2px;
+            }
         }
         .form-info{
             width: 100%;
             padding: 5%;
             display: flex;
             flex-direction: column;
-            gap: 21px;
+            gap: 34px;
             .f{
                 display: flex;
                 flex-direction: column;
@@ -192,7 +278,7 @@ export const HomeContactSection = styled.section`
                 gap: 8px;
                 input{
                     width: 100%;
-                    padding: 5px 2px;
+                    padding: 13px 2px;
                     border: none;
                     border-bottom: 1px solid rgb(226, 226, 226);
                 }
@@ -215,6 +301,18 @@ export const HomeContactSection = styled.section`
 
         button{
             padding: 5%;
+            transition: all 0.4S ease;
+            background-color: #252525;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            span{
+                color: white
+            }
+
+            :hover{
+                background-color: #c43336;
+            }
         }
     }
 

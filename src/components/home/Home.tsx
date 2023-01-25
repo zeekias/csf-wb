@@ -1,9 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { HomeContactSection, HomeSliderSection, HomeStyled, RepresentativesSection, SectionTitle, SoluctionsSection } from './styles'
 import { IoMdCart } from "react-icons/io";
 import { FaPrint, FaWrench } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import samsungLogo from '@/src/assets/logo-samsung-bgnone.png'
 import kyoceraLogo from '@/src/assets/logo-kyocera-bgnone.png'
 import xeroxLogo from '@/src/assets/logo-xerox-bgnone.png'
@@ -12,10 +14,27 @@ import ricohLogo from '@/src/assets/ricoh-logo.png'
 import brotherLogo from '@/src/assets/brother-logo.png'
 
 
-
-const representativesLogos = [samsungLogo, xeroxLogo, kyoceraLogo];
-
 export default function Home() {
+
+    const date = new Date();
+    let numeroDoDiaDoMes = date.getDate();
+    const horaAtual = date.getUTCHours();
+    const minutosAtual = date.getUTCMinutes();
+    const segundosAtual = date.getUTCSeconds();
+    const quantidadeDeSegundosAtual = (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
+    const contadorDeImpressoesAtual = quantidadeDeSegundosAtual * 6 + 2160000000 ;
+    
+    const [contadorDeImpressoes, setContadorDeImpressoes] = useState(contadorDeImpressoesAtual);
+    
+    function incrementar(){
+            let timer = setInterval(()=>{
+                clearInterval(timer);
+                setContadorDeImpressoes(contadorDeImpressoes + 6);
+            }, 1000)
+    }
+
+    incrementar();
+    
     return (
         <HomeStyled>
             <HomeSliderSection>
@@ -76,7 +95,7 @@ export default function Home() {
 
                 <div className='form'>
                     <div className="form-title">
-                        <h2>Entre em contato</h2>
+                        <h3>Entre em contato</h3>
                         <span>Boas impressões fecham negócio</span>
                     </div>
 
@@ -96,8 +115,75 @@ export default function Home() {
 
                         <button><span>ENVIAR</span></button>
                     </div>
+                </div>
 
+                <div className='from-contact-section'>
+                    <div className='contact-title'>
+                        <h2>Nós temos o que você precisa</h2>
+                        <p>Excelência em soluções e serviços na área de produção e armazenagem de documentos, de forma atrativa e viável aos clientes, com retorno positivo sobre o investimento.</p>
+                    </div>
+                    <ul className='progress-bar'>
 
+                        <li className='a'>
+
+                            <CircularProgressbar value={70} text={`210K+`}
+                                styles={buildStyles({
+                                    rotation: 0.85,
+                                    strokeLinecap: 'butt',
+                                    textSize: '16px',
+                                    pathTransitionDuration: 0.5,
+                                    pathColor: `rgb(196, 51, 54)`,
+                                    textColor: 'white',
+                                    trailColor: 'rgb(134, 142, 150, 0.5)',
+                                    backgroundColor: 'red',
+                                })} />
+                            <span>Serviços</span>
+                        </li>
+                        <li className='b'>
+                            <CircularProgressbar value={90} text={`80+`}
+                                styles={buildStyles({
+                                    rotation: 0.7,
+                                    strokeLinecap: 'butt',
+                                    textSize: '16px',
+                                    pathTransitionDuration: 0.5,
+                                    pathColor: `rgb(196, 51, 54)`,
+                                    textColor: 'white',
+                                    trailColor: 'rgb(134, 142, 150, 0.5)',
+                                    backgroundColor: 'red',
+                                })} />
+                            <span>Clientes</span>
+                        </li>
+                        <li className='c'>
+                            <CircularProgressbar value={80} text={`33+`}
+                                styles={buildStyles({
+                                    rotation: 0.8,
+                                    strokeLinecap: 'butt',
+                                    textSize: '16px',
+                                    pathTransitionDuration: 0.5,
+                                    pathColor: `rgb(196, 51, 54)`,
+                                    textColor: 'white',
+
+                                    trailColor: 'rgb(134, 142, 150, 0.5)',
+                                    backgroundColor: 'red',
+                                })} />
+                            <span>Parceiros</span>
+                        </li>
+                        <li className='d'>
+                            <CircularProgressbar value={80} text={`${contadorDeImpressoes.toLocaleString().padStart(10, ""+".")}`}
+                                styles={buildStyles({
+                                    rotation: 0.8,
+                                    strokeLinecap: 'butt',
+                                    textSize: '12px',
+                                    pathTransitionDuration: 0.5,
+                                    pathColor: `rgb(196, 51, 54)`,
+                                    textColor: 'white',
+
+                                    trailColor: 'rgb(134, 142, 150, 0.5)',
+                                    backgroundColor: 'red',
+                                })} />
+                            <span>Impressões</span>
+                        </li>
+                    </ul>
 
                 </div>
 

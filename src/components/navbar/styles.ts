@@ -39,7 +39,7 @@ export const Nav = styled.nav`
         padding: 15px 0px;
         text-transform: uppercase;
         border-radius: 25px;
-        border: 0;
+        border: 1px solid rgb(196, 51, 54);
         background-color: rgb(196, 51, 54);
         cursor: pointer;
         span{
@@ -47,5 +47,12 @@ export const Nav = styled.nav`
             font-weight: 500;
             font-size: 14px;
         }
+        :hover{
+                background-color: white;
+                border: 1px solid black;
+                span{
+                    color: black;
+                }
+            }
     }
 `

@@ -6,6 +6,8 @@ import { FaPrint, FaWrench } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+
+
 import samsungLogo from '@/src/assets/logo-samsung-bgnone.png'
 import kyoceraLogo from '@/src/assets/logo-kyocera-bgnone.png'
 import xeroxLogo from '@/src/assets/logo-xerox-bgnone.png'
@@ -13,32 +15,38 @@ import hpLogo from '@/src/assets/hp-logo.png'
 import ricohLogo from '@/src/assets/ricoh-logo.png'
 import brotherLogo from '@/src/assets/brother-logo.png'
 
+import CarouselComponent from '../carousel/CarouselComponent';
+
 
 export default function Home() {
 
     const date = new Date();
-    let numeroDoDiaDoMes = date.getDate();
+    const numeroDoMes = date.getMonth();
+    const numeroDoDiaDoMes = date.getDate();
     const horaAtual = date.getUTCHours();
     const minutosAtual = date.getUTCMinutes();
     const segundosAtual = date.getUTCSeconds();
-    const quantidadeDeSegundosAtual = (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
-    const contadorDeImpressoesAtual = quantidadeDeSegundosAtual * 6 + 2160000000 ;
-    
+    const quantidadeDeSegundosAtual = 15000000 * numeroDoMes + (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
+    const quantidadeDeImpressoes = quantidadeDeSegundosAtual * 6;
+    const contadorDeImpressoesAtual = quantidadeDeImpressoes + 2160000000;
+
     const [contadorDeImpressoes, setContadorDeImpressoes] = useState(contadorDeImpressoesAtual);
-    
-    function incrementar(){
-            let timer = setInterval(()=>{
-                clearInterval(timer);
-                setContadorDeImpressoes(contadorDeImpressoes + 6);
-            }, 1000)
+
+    const [percentage, setPercentage] = useState(quantidadeDeImpressoes - (15000000 * numeroDoMes));
+    function incrementar() {
+        let timer = setInterval(() => {
+            clearInterval(timer);
+            setContadorDeImpressoes(contadorDeImpressoes + 6);
+            setPercentage(percentage + 6);
+        }, 1000)
     }
 
     incrementar();
-    
+
     return (
         <HomeStyled>
             <HomeSliderSection>
-
+                <CarouselComponent />
             </HomeSliderSection>
 
             <RepresentativesSection>
@@ -169,7 +177,7 @@ export default function Home() {
                             <span>Parceiros</span>
                         </li>
                         <li className='d'>
-                            <CircularProgressbar value={80} text={`${contadorDeImpressoes.toLocaleString().padStart(10, ""+".")}`}
+                            <CircularProgressbar value={percentage} text={`${contadorDeImpressoes.toLocaleString().padStart(10, "" + ".")}`}
                                 styles={buildStyles({
                                     rotation: 0.8,
                                     strokeLinecap: 'butt',
@@ -180,7 +188,7 @@ export default function Home() {
 
                                     trailColor: 'rgb(134, 142, 150, 0.5)',
                                     backgroundColor: 'red',
-                                })} />
+                                })} maxValue={15000000} />
                             <span>Impressões</span>
                         </li>
                     </ul>

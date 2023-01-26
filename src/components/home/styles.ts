@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const HomeStyled = styled.div`
     display: flex;
     flex-direction: column;
-    
-
 `
 
 export const HomeSliderSection = styled.section`
+
     width: 100%;
-    height: 10vh;
-    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 `
 
@@ -160,7 +161,7 @@ export const HomeContactSection = styled.section`
     width: 100%;
     padding: 90px 8%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg-conatct4.jpg");
     background-attachment: fixed;
@@ -170,6 +171,7 @@ export const HomeContactSection = styled.section`
     
     .from-contact-section{
         width: 45%;
+        height: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -240,13 +242,14 @@ export const HomeContactSection = styled.section`
     }
 
     .form{
+        width: 45%;
+        height: max-content;
         background-color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         border-radius: 5px;
-        width: 45%;
         .form-title{
             display: flex;
             flex-direction: column;

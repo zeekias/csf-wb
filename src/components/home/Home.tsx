@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { HomeContactSection, HomeSliderSection, HomeStyled, RepresentativesSection, SectionTitle, SoluctionsSection } from './styles'
 import { IoMdCart } from "react-icons/io";
 import { FaPrint, FaWrench } from "react-icons/fa";
@@ -16,10 +16,12 @@ import ricohLogo from '@/src/assets/ricoh-logo.png'
 import brotherLogo from '@/src/assets/brother-logo.png'
 
 import CarouselComponent from '../carousel/CarouselComponent';
-
+import { emailService } from '@/src/services/emailService';
+import ReCAPTCHA from "react-google-recaptcha"
+import { APP_SITE_KEY } from '@/src/services/captchaService';
 
 export default function Home() {
-
+    
     const date = new Date();
     const numeroDoMes = date.getMonth();
     const numeroDoDiaDoMes = date.getDate();
@@ -29,10 +31,20 @@ export default function Home() {
     const quantidadeDeSegundosAtual = 15000000 * numeroDoMes + (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
     const quantidadeDeImpressoes = quantidadeDeSegundosAtual * 6;
     const contadorDeImpressoesAtual = quantidadeDeImpressoes + 2160000000;
-
     const [contadorDeImpressoes, setContadorDeImpressoes] = useState(contadorDeImpressoesAtual);
-
     const [percentage, setPercentage] = useState(quantidadeDeImpressoes - (15000000 * numeroDoMes));
+
+    const formContactHome = useRef(null);
+    const [email, setEmail] = useState('');
+    
+
+    const sendEmail = async (e: any) => {
+        e.preventDefault();
+        await emailService.sendEmail(formContactHome.current);
+
+          
+    };
+
     function incrementar() {
         let timer = setInterval(() => {
             clearInterval(timer);
@@ -107,22 +119,23 @@ export default function Home() {
                         <span>Boas impressões fecham negócio</span>
                     </div>
 
-                    <div className='form-info'>
+                    <form ref={formContactHome} className='form-info' onSubmit={sendEmail} method='POST'>
                         <div className="f nome">
                             <label>Seu nome</label>
-                            <input type="text" placeholder='Meu nome' />
+                            <input type="text" placeholder='Meu nome' name='from_name'/>
                         </div>
                         <div className="f email">
                             <label>Seu E-mail</label>
-                            <input type="text" placeholder='exemplo@meuemail.com' />
+                            <input type="text" placeholder='exemplo@meuemail.com' name='email' onChange={(e)=>setEmail(e.target.value)} />
+                            <input hidden type="text" value={email} name='reply_to' />
                         </div>
                         <div className="f mensagem">
                             <label>Uma mensagem</label>
-                            <textarea placeholder='Gostaria de uma consultoria...' />
+                            <textarea placeholder='Gostaria de uma consultoria...'  name='message'/>
                         </div>
-
-                        <button><span>ENVIAR</span></button>
-                    </div>
+                        <ReCAPTCHA sitekey={APP_SITE_KEY} />
+                        <button className="g-recaptcha" name='' type='submit'><span>ENVIAR</span></button>
+                    </form>
                 </div>
 
                 <div className='from-contact-section'>

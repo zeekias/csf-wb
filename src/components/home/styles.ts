@@ -28,6 +28,7 @@ export const RepresentativesSection = styled.section`
     
 
     .logos-list{
+        margin-left: -21px;
         padding: 34px;
         max-width: 100%;
         display: grid;
@@ -45,7 +46,8 @@ export const RepresentativesSection = styled.section`
             
             img{
                 max-width: 350px;
-                
+                filter: grayscale(100%);
+                filter: gray;
             }
         }
        

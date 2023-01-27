@@ -5,7 +5,7 @@ export const Nav = styled.nav`
     display: flex;
     padding: 0 8%;
     background-color: #f6f6f6;
-    
+    margin-bottom: 3px;
     .content{
         width: 100%;
         display: flex;
@@ -22,15 +22,16 @@ export const Nav = styled.nav`
                 height: 100%;
                 color: rgb(37, 37, 37);
                 
+                
             }
             :hover{
                 span{
-                    border-bottom: 3px solid rgb(196, 51, 54);
+                    border-bottom: 5px solid rgb(196, 51, 54);
                     color: rgb(196, 51, 54);
                 }
             }
 
-
+            
         }
     }
     button{

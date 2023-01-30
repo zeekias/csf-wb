@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { AboutContainer, AboutSectionContainer, SectionTitle, ValuesSectionContainer } from './styles'
+import { FaGraduationCap } from 'react-icons/fa'
+import { BsFillCameraVideoFill, BsTrophyFill } from 'react-icons/bs'
 
 import csfImage from '@/src/assets/logo_home.png';
 export default function About() {
@@ -20,7 +22,7 @@ export default function About() {
                 <div className='values'>
                     <div className='value'>
                         <div className="title">
-
+                            <FaGraduationCap size={50}/>
                             <h2>Missão</h2>
                         </div>
 
@@ -28,7 +30,7 @@ export default function About() {
                     </div>
                     <div className='value'>
                         <div className="title">
-
+                            <BsFillCameraVideoFill size={40}/>
                             <h2>Visão</h2>
                         </div>
 
@@ -37,30 +39,33 @@ export default function About() {
 
                 </div>
                 <div className='value-content'>
-                    <h2>Valores</h2>
-                    <ol>
+                    <div className="title">
+                        <BsTrophyFill size={40}/>
+                        <h2>Valores</h2>
+                    </div>
+                    <ul>
                         <li>
-                            O cliente está em primeiro plano;
+                            1. O cliente está em primeiro plano;
                         </li>
                         <li>
-                            Trabalhamos com pessoas qualificadas, motivadas e prestativas;
+                            2. Trabalhamos com pessoas qualificadas, motivadas e prestativas;
                         </li>
                         <li>
-                            Propiciamos dignidade e respeito aos funcionário e colaboradores:
+                            3. Propiciamos dignidade e respeito aos funcionário e colaboradores:
                         </li>
                         <li>
-                            Vivemos a tecnologia no estado da arte;
+                            4. Vivemos a tecnologia no estado da arte;
                         </li>
                         <li>
-                            Buscamos Qualidade e Excelência em tudo que fazemos;
+                            5. Buscamos Qualidade e Excelência em tudo que fazemos;
                         </li>
                         <li>
-                            Nossos negócios devem ser rentáveis;
+                            6. Nossos negócios devem ser rentáveis;
                         </li>
                         <li>
-                            Cumprimos nossas responsabilidades sociais e ambientais;
+                            7. Cumprimos nossas responsabilidades sociais e ambientais;
                         </li>
-                    </ol>
+                    </ul>
                 </div>
             </ValuesSectionContainer>
         </AboutContainer>

@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const AboutContainer = styled.div`
     width: 100%;
-    padding: 55px 8%;
+    
     display: flex;
     flex-direction: column;    
-    gap: 34px;
+    gap: 2.125rem;
 `
 
 export const SectionTitle = styled.div`
@@ -14,7 +14,7 @@ export const SectionTitle = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 34px;
+    gap: 2.125rem;
     h2{
             width: fit-content;
             position: relative;
@@ -22,17 +22,17 @@ export const SectionTitle = styled.div`
                 content: '';
                 position: absolute; 
                 z-index:10;
-                bottom: -13px;
+                bottom: -0.8125rem;
                 left:0px;
-                border-bottom:3px solid #c43336;
-                width: calc(34% + 15px) ;
+                border-bottom:.1875rem solid #c43336;
+                width: calc(34% + .9375rem) ;
             }
         }
         p{
             color: rgb(102,102,102);
-            font-size: 15px;
+            font-size: .9375rem;
             text-align: justify;
-            line-height: 21px;
+            line-height: 1.3125rem;
             
         }
 `
@@ -40,6 +40,7 @@ export const SectionTitle = styled.div`
 export const AboutSectionContainer = styled.section`
     width: 100%;
     height: 100%;
+    padding: 3.4375rem 8%;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -61,35 +62,77 @@ export const AboutSectionContainer = styled.section`
 
 export const ValuesSectionContainer = styled.section`
     width: 100%;
+    padding: 5.5625rem 8%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #dc3545;
+    color: white;
     .values{
-        width: 100%;
+        width: 50%;
         display: flex;
-        
+        flex-direction: column;
+        justify-content: space-between;
         .value{
-            width: 50%;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            gap: 21px;
+            align-items: flex-start;
+            justify-content: space-between;            
+            gap: .5rem;
             .title{
-
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 h2{
-                    font-size: 34px;
+                    font-size: 2.125rem;
                     text-align: center;
+                    letter-spacing: .0625rem;
                 }
             }
             p{
-                width: 90%;
                 text-align: justify;
-                
+                color: rgb(238, 238, 238);
             }
         }
     }
     .value-content{
+        
+        width: 45%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        
+        gap: .5rem;
+
+        .title{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;  
+            }
+
+        h2{
+            width: 100%;
+            font-size: 2.125rem;
+            text-align: center;
+            letter-spacing: .0625rem;
+        }
+        ul{
+            
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            list-style: none;
+            gap: .5rem;
+
+            li{
+                color: rgb(238, 238, 238);
+            }
+        }
+
     }
 
 `

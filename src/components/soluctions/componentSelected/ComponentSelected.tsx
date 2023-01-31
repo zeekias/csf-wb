@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { ComponentSelectedContainer } from './styles'
 import locacaoJPG from '@/src/assets/locacao.jpg'
@@ -8,10 +8,11 @@ import gerenciamentoImpressaoPNG from '@/src/assets/gerenciamento-impressao.png'
 import impressaoComDadosVariaveisPNG from '@/src/assets/impressao-com-dados-variaveis.png'
 import divisaoGraficaPNG from '@/src/assets/divisao-grafica.png'
 import { CSSTransition } from 'react-transition-group';
+
 interface iProps {
     soluctionArrayPosition: number;
     animate: boolean;
-    setAnimate: (bool: boolean)=>void;
+    setAnimate: () => void;
 }
 
 const vendasELocacoes = {
@@ -59,15 +60,12 @@ const divisaoGrafica = {
 const soluctionsArray = [vendasELocacoes, assistenciaTecnica, processoDeGed, gerenciamento, impressaoComVariaveis, divisaoGrafica];
 
 export default function ComponentSelected(props: iProps) {
-
-    console.log(props.animate)
-
-
+    const nodeRef = useRef(null);
     return (
         <ComponentSelectedContainer>
 
-            <CSSTransition in={props.animate} timeout={100} onEnter={()=>props.setAnimate(false)} classNames="my-node">
-                <div className="content">
+            <CSSTransition nodeRef={nodeRef} in={props.animate} onEnter={()=>props.setAnimate()} timeout={200} classNames="">
+                <div ref={nodeRef} className="content">
                     <div className="image-container">
                         <Image src={soluctionsArray[props.soluctionArrayPosition].imageObject} alt={''}></Image>
                     </div>
@@ -83,8 +81,8 @@ export default function ComponentSelected(props: iProps) {
                         </div>
                     </div>
                 </div>
-            </CSSTransition>
 
+            </CSSTransition>
         </ComponentSelectedContainer>
     )
 }

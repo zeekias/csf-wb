@@ -24,6 +24,10 @@ export const Nav = styled.nav`
                 
                 
             }
+            .selected{
+                border-bottom: 5px solid rgb(196, 51, 54);
+                color: rgb(196, 51, 54);
+            }
             :hover{
                 span{
                     border-bottom: 5px solid rgb(196, 51, 54);

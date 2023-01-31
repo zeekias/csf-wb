@@ -6,6 +6,14 @@ export const ComponentSelectedContainer = styled.div`
     background-color: #f6f6f6;
 
 
+    .content.exit-done {
+        opacity: 1;
+        animation: slide-left 0.5s both;
+    }
+    .content.exit-active {
+        opacity: 0;
+        
+    }
  
 
     .content{
@@ -16,15 +24,15 @@ export const ComponentSelectedContainer = styled.div`
         justify-content: space-between;
         .image-container{
             width: 30%;
-            background-color: red;
             align-self: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 5px;
             img{
                 width: 100%;
                 height: auto;
-                
+                border-radius: 8px;
             }
         }
         .title-and-description{
@@ -38,7 +46,9 @@ export const ComponentSelectedContainer = styled.div`
                 flex-direction: column;
                 gap: 5px;
                 
-                
+                span{
+                    color: rgb(196, 51, 54);
+                }
             }
             .description{
                 p{
@@ -47,7 +57,7 @@ export const ComponentSelectedContainer = styled.div`
                 }
             }
         }
-        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        
         }
         @keyframes slide-left {
             0% {

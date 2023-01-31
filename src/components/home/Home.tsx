@@ -20,19 +20,24 @@ import { emailService } from '@/src/services/emailService';
 import ReCAPTCHA from "react-google-recaptcha"
 import { APP_SITE_KEY } from '@/src/services/captchaService';
 
-export default function Home() {
+
+interface iProps{
+    handleNavBarOption: (optionNumber: number)=>void;
+}
+
+export default function Home(props: iProps) {
     
-    const date = new Date();
-    const numeroDoMes = date.getMonth();
-    const numeroDoDiaDoMes = date.getDate();
-    const horaAtual = date.getUTCHours();
-    const minutosAtual = date.getUTCMinutes();
-    const segundosAtual = date.getUTCSeconds();
-    const quantidadeDeSegundosAtual = 15000000 * numeroDoMes + (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
-    const quantidadeDeImpressoes = quantidadeDeSegundosAtual * 6;
-    const contadorDeImpressoesAtual = quantidadeDeImpressoes + 2160000000;
-    const [contadorDeImpressoes, setContadorDeImpressoes] = useState(contadorDeImpressoesAtual);
-    const [percentage, setPercentage] = useState(quantidadeDeImpressoes - (15000000 * numeroDoMes));
+    // const date = new Date();
+    // const numeroDoMes = date.getMonth();
+    // const numeroDoDiaDoMes = date.getDate();
+    // const horaAtual = date.getUTCHours();
+    // const minutosAtual = date.getUTCMinutes();
+    // const segundosAtual = date.getUTCSeconds();
+    // const quantidadeDeSegundosAtual = 15000000 * numeroDoMes + (numeroDoDiaDoMes - 1) * 24 * 60 * 60 + horaAtual * 60 * 60 + minutosAtual * 60 + segundosAtual;
+    // const quantidadeDeImpressoes = quantidadeDeSegundosAtual * 6;
+    // const contadorDeImpressoesAtual = quantidadeDeImpressoes + 2160000000;
+    // const [contadorDeImpressoes, setContadorDeImpressoes] = useState(contadorDeImpressoesAtual);
+    // const [percentage, setPercentage] = useState(quantidadeDeImpressoes - (15000000 * numeroDoMes));
 
     const formContactHome = useRef(null);
     const [email, setEmail] = useState('');
@@ -44,16 +49,8 @@ export default function Home() {
 
           
     };
+    
 
-    function incrementar() {
-        let timer = setInterval(() => {
-            clearInterval(timer);
-            setContadorDeImpressoes(contadorDeImpressoes + 6);
-            setPercentage(percentage + 6);
-        }, 1000)
-    }
-
-    incrementar();
 
     return (
         <HomeStyled>
@@ -108,7 +105,7 @@ export default function Home() {
                         <p>Impressão de Contracheques, cobranças, boletos bancários, material de marketing personalizado</p>
                     </li>
                 </ul>
-                <div className='button-container'><button><span>Veja todos</span></button></div>
+                <div className='button-container'><button onClick={()=>props.handleNavBarOption(2)}><span>Veja todos</span></button></div>
             </SoluctionsSection>
 
             <HomeContactSection>
@@ -127,14 +124,14 @@ export default function Home() {
                         <div className="f email">
                             <label>Seu E-mail</label>
                             <input type="text" placeholder='exemplo@meuemail.com' name='email' onChange={(e)=>setEmail(e.target.value)} />
-                            <input hidden type="text" value={email} name='reply_to' />
+                            <input hidden type="text" defaultValue={email} name='reply_to' />
                         </div>
                         <div className="f mensagem">
                             <label>Uma mensagem</label>
                             <textarea placeholder='Gostaria de uma consultoria...'  name='message'/>
                         </div>
                         <ReCAPTCHA sitekey={APP_SITE_KEY} />
-                        <button className="g-recaptcha" name='' type='submit'><span>ENVIAR</span></button>
+                        <button className="g-recaptcha"  type='submit'><span>ENVIAR</span></button>
                     </form>
                 </div>
 
@@ -190,7 +187,7 @@ export default function Home() {
                             <span>Parceiros</span>
                         </li>
                         <li className='d'>
-                            <CircularProgressbar value={percentage} text={`${contadorDeImpressoes.toLocaleString().padStart(10, "" + ".")}`}
+                            <CircularProgressbar value={70} text={`${"20000000".toLocaleString().padStart(10, "" + ".")}`}
                                 styles={buildStyles({
                                     rotation: 0.8,
                                     strokeLinecap: 'butt',

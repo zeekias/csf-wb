@@ -1,6 +1,7 @@
 import React from 'react'
 import About from '../about/About'
 import Budget from '../budget/Budget'
+import ClientArea from '../clientArea/ClientArea'
 import Contact from '../contact/Contact'
 import Home from '../home/Home'
 import Soluctions from '../soluctions/Soluctions'
@@ -23,7 +24,7 @@ export default function Main(props: iProps) {
       case 3: 
         return <Contact />
       case 4: 
-        return <></>
+        return <ClientArea />
   
     }
   }

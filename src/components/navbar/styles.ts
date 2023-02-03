@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
     width: 100%;
+    height: 10vh;
     display: flex;
     padding: 0 8%;
-    background-color: #f6f6f6;
-    margin-bottom: 3px;
+    background-color: #f6f6f6; 
     .content{
         width: 100%;
         display: flex;

@@ -1,12 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { ContactContainer, SectionsContainer, SectionStyled, SectionTitle } from './styles';
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 import { MdLocationOn } from 'react-icons/md';
-import csfLogo from '@/src/assets/csf.png';
 export default function Contact() {
 
     return (

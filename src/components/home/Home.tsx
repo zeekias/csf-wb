@@ -19,14 +19,15 @@ import CarouselComponent from '../carousel/CarouselComponent';
 import { emailService } from '@/src/services/emailService';
 import ReCAPTCHA from "react-google-recaptcha"
 import { APP_SITE_KEY } from '@/src/services/captchaService';
+import { Carousel } from 'react-responsive-carousel';
 
 
-interface iProps{
-    handleNavBarOption: (optionNumber: number)=>void;
+interface iProps {
+    handleNavBarOption: (optionNumber: number) => void;
 }
 
 export default function Home(props: iProps) {
-    
+
     // const date = new Date();
     // const numeroDoMes = date.getMonth();
     // const numeroDoDiaDoMes = date.getDate();
@@ -41,15 +42,15 @@ export default function Home(props: iProps) {
 
     const formContactHome = useRef(null);
     const [email, setEmail] = useState('');
-    
+
 
     const sendEmail = async (e: any) => {
         e.preventDefault();
         await emailService.sendEmail(formContactHome.current);
 
-          
+
     };
-    
+
 
 
     return (
@@ -69,13 +70,26 @@ export default function Home(props: iProps) {
 
                     <li ><Image src={samsungLogo} alt={''} width={350} /></li>
                     <li><Image src={xeroxLogo} alt={''} width={350} /></li>
+                    <li ><Image src={hpLogo} alt={''} width={120} /></li>
                     <li ><Image src={kyoceraLogo} alt={''} width={350} /></li>
 
 
-                    <li ><Image src={hpLogo} alt={''} width={120} /></li>
                     <li ><Image src={ricohLogo} alt={''} width={220} /></li>
                     <li ><Image src={brotherLogo} alt={''} width={220} /></li>
 
+                </ul>
+                <ul className="logos-list mobile" >
+                    <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} >
+
+                        <li ><Image src={samsungLogo} alt={''} width={350} /></li>
+                        <li><Image src={xeroxLogo} alt={''} width={350} /></li>
+                        <li ><Image src={hpLogo} alt={''} width={120} /></li>
+                        <li ><Image src={kyoceraLogo} alt={''} width={350} /></li>
+
+
+                        <li ><Image src={ricohLogo} alt={''} width={220} /></li>
+                        <li ><Image src={brotherLogo} alt={''} width={220} /></li>
+                    </Carousel>
                 </ul>
             </RepresentativesSection>
 
@@ -105,7 +119,31 @@ export default function Home(props: iProps) {
                         <p>Impressão de Contracheques, cobranças, boletos bancários, material de marketing personalizado</p>
                     </li>
                 </ul>
-                <div className='button-container'><button onClick={()=>props.handleNavBarOption(2)}><span>Veja todos</span></button></div>
+                <ul className="soluctions-list mobile">
+                    <Carousel autoPlay infiniteLoop showThumbs={false}  showStatus={false}>
+                        <li>
+                            <IoMdCart color='c43336' size={55} />
+                            <h3>Vendas e Locações</h3>
+                            <p>Equipamentos de pequeno, médio e grande porte, preto & branco e coloridos, com tecnologias Laser e Cera Sólida</p>
+                        </li>
+                        <li>
+                            <FaWrench color='c43336' size={55} />
+                            <h3>Assistência técnica</h3>
+                            <p>Atuamos com técnicos treinados e certificados diretamente pelos fabricantes</p>
+                        </li>
+                        <li>
+                            <MdOutlineComputer color='c43336' size={55} />
+                            <h3>Processo de GED</h3>
+                            <p>Gestão Eletrônica de Documentos. Tratamento e arquivamento digital para documentos</p>
+                        </li>
+                        <li>
+                            <FaPrint color='c43336' size={55} />
+                            <h3>Impressão com variáveis</h3>
+                            <p>Impressão de Contracheques, cobranças, boletos bancários, material de marketing personalizado</p>
+                        </li>
+                    </Carousel>
+                </ul>
+                <div className='button-container'><button onClick={() => props.handleNavBarOption(2)}><span>Veja todos</span></button></div>
             </SoluctionsSection>
 
             <HomeContactSection>
@@ -119,19 +157,19 @@ export default function Home(props: iProps) {
                     <form ref={formContactHome} className='form-info' onSubmit={sendEmail} method='POST'>
                         <div className="f nome">
                             <label>Seu nome</label>
-                            <input type="text" placeholder='Meu nome' name='from_name'/>
+                            <input type="text" placeholder='Meu nome' name='from_name' />
                         </div>
                         <div className="f email">
                             <label>Seu E-mail</label>
-                            <input type="text" placeholder='exemplo@meuemail.com' name='email' onChange={(e)=>setEmail(e.target.value)} />
+                            <input type="text" placeholder='exemplo@meuemail.com' name='email' onChange={(e) => setEmail(e.target.value)} />
                             <input hidden type="text" defaultValue={email} name='reply_to' />
                         </div>
                         <div className="f mensagem">
                             <label>Uma mensagem</label>
-                            <textarea placeholder='Gostaria de uma consultoria...'  name='message'/>
+                            <textarea placeholder='Gostaria de uma consultoria...' name='message' />
                         </div>
                         <ReCAPTCHA sitekey={APP_SITE_KEY} />
-                        <button className="g-recaptcha"  type='submit'><span>ENVIAR</span></button>
+                        <button className="g-recaptcha" type='submit'><span>ENVIAR</span></button>
                     </form>
                 </div>
 

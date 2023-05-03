@@ -15,28 +15,24 @@ export default function Header() {
     setIconColor(aux);
   }
 
-  return (
+  return ( 
     <HeaderStyled>
       <TopBar>
         <ul className="content">
           <li>
             <FiClock color="c43336" />
             <span>
-              Horário • Fortaleza - CE 08:00 às 12:30 | 13:30 às 18:00
+              Horário • 08:00 às 12:30 | 13:30 às 18:00
             </span>
           </li>
 
-          <li>
-            <FiClock color="c43336" />
-            <span>Horário • São Luís - MA 08:00 às 12:30 | 13:30 às 18:00</span>
-          </li>
         </ul>
         <ul className="social">
           <li
             onMouseOver={() => changeIconColor()}
             onMouseOut={() => changeIconColor(0, false)}
           >
-            <a href="https://pt-br.facebook.com/csfdigital/" target={"_blank"}>
+            <a href="https://pt-br.facebook.com/csfdigital/" target={"_blank"} rel="noreferrer">
               <FaFacebookF color={iconColor[0]} />
             </a>
           </li>
@@ -44,7 +40,7 @@ export default function Header() {
             onMouseOver={() => changeIconColor(1)}
             onMouseOut={() => changeIconColor(1, false)}
           >
-            <a href="https://www.instagram.com/csfdigital/" target={"_blank"}>
+            <a href="https://www.instagram.com/csfdigital/" target={"_blank"} rel="noreferrer">
               <BsInstagram color={iconColor[1]}  />
             </a>
           </li>
@@ -52,14 +48,14 @@ export default function Header() {
             onMouseOver={() => changeIconColor(2)}
             onMouseOut={() => changeIconColor(2, false)}
           >
-            <a href="https://www.linkedin.com/company/csfdigital/about/" target={"_blank"}>
+            <a href="https://www.linkedin.com/company/csfdigital/about/" target={"_blank"} rel="noreferrer">
               <FaLinkedinIn color={iconColor[2]} />
             </a>
           </li>
-        </ul>
+        </ul> 
       </TopBar>
 
-      <HeaderInner>
+      <HeaderInner className="header-innner">
         <div className="image-container">
           <Image src={logoHome} alt={"Logo - CSF DIGITAL"} height={100} />
         </div>

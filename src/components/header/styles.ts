@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styled-sizes-break-points/deviceSizes";
 
 export const HeaderStyled = styled.header`
     ul{
@@ -7,20 +8,26 @@ export const HeaderStyled = styled.header`
         justify-content: flex-start;
         list-style: none;
     }
+    @media ${device.laptop} {
+        .header-innner{
+            justify-content: space-between;
+        }
+    }
 `
 
-export const TopBar = styled.div` 
+export const TopBar = styled.div`
+    height: 5vh;
     display: flex;
-    padding: 16px 8%;
+    padding: 21px 8%;
     justify-content: space-between;
     background-color: #252525;
 
-    .content{ 
+    .content{
         gap: 20px;
         font-size: 14px;
         font-weight: 500;
         color: #ccc;
-
+        width: 60%;
         li{
             display: flex;
             align-items: center;
@@ -46,18 +53,22 @@ export const HeaderInner = styled.div`
     width: 100%; 
     padding: 0 8%;
     display: flex;
-     
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     .image-container{
         padding: 24px 0;
     }
     .content{
+        display: none;
         align-items: center;
-        gap: 50px; 
+        justify-content: center;
+        gap: 34px; 
         li{
+
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             gap: 15px;
 
             .icon-container{
@@ -87,4 +98,11 @@ export const HeaderInner = styled.div`
             
         }
     }
+
+    @media ${device.laptop} {
+        .content{
+            display: flex;
+        }
+    }
+
 `

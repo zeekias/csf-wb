@@ -12,7 +12,7 @@ export default function About() {
                 <div className="image-container">
                     <Image src={csfImage} alt={''}></Image>
                 </div>
-                <SectionTitle>
+                <SectionTitle className='section-title'>
                     <h2>Sobre a CSF Digital</h2>
                     <p>&nbsp;&nbsp;&nbsp;A CSF SERVIÇOS DIGITAIS LTDA atua no campo de Soluções de Impressão e Documentos Digitais, abrangendo tanto o mercado corporativo como governamental. Através da experiência adquirida em dez anos de mercado, reunimos colaboradores especialistas nas áreas técnicas e tecnológicas evidenciando assim, a expertise ímpar no desenvolvimento e implementação de projetos. Com isso, a CSF é reconhecida, tanto no mercado quanto por seus clientes, como uma empresa especializada em Projetos de Outsourcing, munida de equipamentos e ferramentas de software de alta complexidade técnica garantindo a excelência em seus serviços prestados. Além da Matriz em São Luís - MA e a filial na cidade de Fortaleza - CE, a CSF conta com técnicos residentes em todos os estados do Nordeste do Brasil, com contrato amplo de outsourcing no setor Bancário, sendo um dos maiores players deste segmento.</p>
                 </SectionTitle>

@@ -1,7 +1,14 @@
 import styled from "styled-components";
+import { device } from "../styled-sizes-break-points/deviceSizes";
 
 export const ContactContainer = styled.div`
-
+    
+     @media ${device.laptop} {
+     .sections-container{
+        flex-direction: row;
+        gap: 0px;
+     }   
+    }
 `
 
 
@@ -53,16 +60,24 @@ export const SectionTitle = styled.div`
 
 export const SectionsContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 34px;
     align-items: center;
     justify-content: space-between;
+    
     padding: 55px 8%;
     background-color: #f6f6f6;
+
+    @media ${device.laptop} {
+     section{
+        width: 49%;
+     }   
+    }
 
 `
 
 export const SectionStyled = styled.section`
-    width: 49%;
+    width: 100%;
     height: fit-content;
     padding: 5% 5%;
     display: flex;

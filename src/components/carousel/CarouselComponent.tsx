@@ -10,7 +10,7 @@ import Slide from './slide/Slide';
 export default function CarouselComponent() {
   return (
     <CarouselContainer>
-      <Carousel autoPlay infiniteLoop  showThumbs={false}>
+      <Carousel autoPlay infiniteLoop  showThumbs={false} showStatus={false}>
         <Slide slideType={true} aContent={'flex-start'} imageUrl={`linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('banner-1.png')`} textColor=""  tAlign='left'/>
         <Slide slideType={false} aContent={'flex-end'} imageUrl={`linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('banner-2.jpg')`} textColor="white" tAlign='right'/>
       </Carousel>

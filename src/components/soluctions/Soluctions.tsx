@@ -52,7 +52,7 @@ export default function Soluctions() {
                     </div>
                     <p>Equipamentos de pequeno, médio e grande porte, preto & branco e coloridos, com tecnologias Laser e Cera Sólida</p>
                 </li>
-                <li >
+                <li > 
                     <div className={`image-container ${soluctionNumberSelected === 1 && 'selected'}`}>
                         <div className="icon-container">
                             <BiSearchAlt className='search-icon' size={30} color={'white'} onClick={() => {

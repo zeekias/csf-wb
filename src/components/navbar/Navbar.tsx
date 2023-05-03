@@ -37,7 +37,7 @@ export default function Navbar(props: iProps) {
 
 
   return (
-    <Nav id='navbar' className={` ${stickyClass}`} >
+    <Nav id='navbar-large' className={` ${stickyClass}`} >
       <ul className='content'>
         <li onClick={() => props.handleNavBarOption(0)}><span className={`${props.navBarOptionNumber === 0 && 'selected'}`}>home</span></li>
         <li onClick={() => props.handleNavBarOption(1)}><span className={`${props.navBarOptionNumber === 1 && 'selected'}`}>sobre</span></li>

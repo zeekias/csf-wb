@@ -47,7 +47,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <FiClock color="c43336" />
-                            <a href="">
+                            <a href=""> 
                                 <span>ABERTO:  08:00 às 12:30 e 13:30 às 18:00</span>
                             </a>
                         </li>
@@ -135,7 +135,7 @@ export default function Footer() {
                     onMouseOver={() => changeIconColor()}
                     onMouseOut={() => changeIconColor(0, false)}
                 >
-                    <a href="https://pt-br.facebook.com/csfdigital/" target={"_blank"}>
+                    <a href="https://pt-br.facebook.com/csfdigital/" target={"_blank"} rel="noreferrer">
                         <FaFacebookF color={iconColor[0]} size={15} />
                     </a>
                 </li>
@@ -143,7 +143,7 @@ export default function Footer() {
                     onMouseOver={() => changeIconColor(1)}
                     onMouseOut={() => changeIconColor(1, false)}
                 >
-                    <a href="https://www.instagram.com/csfdigital/" target={"_blank"}>
+                    <a href="https://www.instagram.com/csfdigital/" target={"_blank"} rel="noreferrer">
                         <BsInstagram color={iconColor[1]} size={15} />
                     </a>
                 </li>
@@ -151,7 +151,7 @@ export default function Footer() {
                     onMouseOver={() => changeIconColor(2)}
                     onMouseOut={() => changeIconColor(2, false)}
                 >
-                    <a href="https://www.linkedin.com/company/csfdigital/about/" target={"_blank"}>
+                    <a href="https://www.linkedin.com/company/csfdigital/about/" target={"_blank"} rel="noreferrer">
                         <FaLinkedinIn color={iconColor[2]} size={15} />
                     </a>
                 </li>

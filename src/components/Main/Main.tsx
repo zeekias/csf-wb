@@ -12,7 +12,7 @@ interface iProps{
   handleNavBarOption: (optionNumber: number)=>void;
 }
 
-export default function Main(props: iProps) {
+export  function Main(props: iProps) {
   function handleSubComponentMain(navBarOptionNumber: number){
     switch(navBarOptionNumber){
       case 0:

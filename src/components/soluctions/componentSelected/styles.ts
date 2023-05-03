@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styled-sizes-break-points/deviceSizes";
 
 export const ComponentSelectedContainer = styled.div`
     width: 100%;
@@ -8,7 +9,7 @@ export const ComponentSelectedContainer = styled.div`
 
     .content.exit-done {
         opacity: 1;
-        animation: slide-left 0.5s both;
+        animation: slide-left 0.5s both; 
     }
     .content.exit-active {
         opacity: 0;
@@ -22,8 +23,10 @@ export const ComponentSelectedContainer = styled.div`
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.3125rem;
         .image-container{
-            width: 30%;
+            width: 100%;
             align-self: center;
             display: flex;
             align-items: center;
@@ -34,10 +37,13 @@ export const ComponentSelectedContainer = styled.div`
                 height: auto;
                 border-radius: 8px;
             }
+
+            @media ${device.tablet}{
+                width: 30%;
+            }
         }
         .title-and-description{
-            width: 65%;
-            max-width: 72%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 13px;
@@ -55,6 +61,12 @@ export const ComponentSelectedContainer = styled.div`
                     text-align: justify;
                     line-height: 25px;
                 }
+            }
+
+            @media ${device.tablet}{
+                width: 65%;
+                max-width: 72%;
+                gap: 0;
             }
         }
         

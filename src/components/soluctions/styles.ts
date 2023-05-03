@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styled-sizes-break-points/deviceSizes";
 
 
 export const SoluctionsContainer = styled.div`
@@ -65,10 +66,9 @@ export const SoluctionsList = styled.ul`
     padding: 0px 8%;
     margin-bottom: 55px;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    
+    grid-template-columns: 49% 49%;
     align-content: space-between;
-    justify-content: space-between;
+    justify-content:  space-between;
     list-style: none;
     
     gap: 8px;
@@ -79,15 +79,15 @@ export const SoluctionsList = styled.ul`
         width: 100%;
         height: 100%;
         display: flex;
+
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         gap: 8px;
         
 
         .image-container{
             width: fit-content;
-            height: fit-content;
+            height: 100px;
             position: relative;
             .icon-container{
                 background-color: rgb(0, 0, 0, 0.5);
@@ -112,7 +112,6 @@ export const SoluctionsList = styled.ul`
                 }
             }
             img{
-                
                 width: 100%;
                 height: 100%;
                 border-radius: 8px;
@@ -175,19 +174,30 @@ export const SoluctionsList = styled.ul`
                 font-size: 20px;
                 letter-spacing: 1px;
                 font-weight: 600;
+                text-align: center;
             }
             span{
                 font-size: 12px;
                 color: rgb(196, 51, 54);
+                text-align: center;
             }
         }
-        align-items: center;
-        justify-content: center;
+        
         p{
+            display: none;
             height: calc(100%);
             font-size: 12px;
             text-align: center;
             color: rgb(102, 102, 102);
+        }
+    }
+
+    @media ${device.tablet}{
+        grid-template-columns: 30% 30% 30%;
+        li{
+            p{
+            display: flex; 
+        }
         }
     }
     

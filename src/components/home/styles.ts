@@ -218,6 +218,7 @@ export const HomeContactSection = styled.section`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    row-gap: 34px;
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg-conatct4.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -231,7 +232,7 @@ export const HomeContactSection = styled.section`
         flex-direction: column;
         align-items: center;
         gap: 2.125rem;
-
+        
         .contact-title{
             display: flex;
             flex-direction: column;
@@ -343,7 +344,7 @@ export const HomeContactSection = styled.section`
             }
 
             .f.mensagem{
-                height: 12.5rem;
+                height: 8rem;
 
                 textarea{
                     width: 100%;
@@ -354,6 +355,30 @@ export const HomeContactSection = styled.section`
                     border-bottom: .0625rem solid rgb(226, 226, 226);
                     resize: none;
                 }
+            }
+            .captcha-container{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                max-width: 100%;
+                transform:scale(0.87);
+                    -webkit-transform:scale(0.87);
+                    transform-origin:0 0;
+                    -webkit-transform-origin:0 0;
+            }
+
+            
+
+            @media ${device.tablet} {
+                .f.mensagem{
+                height: 12.5rem;
+                }
+                .captcha-container{
+                    transform:scale(1);
+                    -webkit-transform:scale(1);
+                    transform-origin:0 0;
+                    -webkit-transform-origin:0 0;
+            }
             }
         }
 

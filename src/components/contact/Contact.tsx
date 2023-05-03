@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 import { MdLocationOn } from 'react-icons/md';
-export default function Contact() {
+export default function Contact() { 
 
     return (
         <ContactContainer>
@@ -16,8 +16,8 @@ export default function Contact() {
             </SectionTitle>
 
 
-            <SectionsContainer>
-                <SectionStyled>
+            <SectionsContainer className='sections-container'>
+                <SectionStyled  >
                     <div className='section-info'>
                         <h3>CSF Digital • São Luís - MA</h3>
                         <div className="info-container">
@@ -54,7 +54,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </SectionStyled>
-                <SectionStyled>
+                <SectionStyled >
                     <div className='section-info'>
                         <h3>CSF Digital • Fortaleza - CE</h3>
                         <div className="info-container">

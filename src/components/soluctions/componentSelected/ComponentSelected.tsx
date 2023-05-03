@@ -62,7 +62,7 @@ const soluctionsArray = [vendasELocacoes, assistenciaTecnica, processoDeGed, ger
 export default function ComponentSelected(props: iProps) {
     const nodeRef = useRef(null);
     return (
-        <ComponentSelectedContainer>
+        <ComponentSelectedContainer> 
 
             <CSSTransition nodeRef={nodeRef} in={props.animate} onEnter={()=>props.setAnimate()} timeout={200} classNames="">
                 <div ref={nodeRef} className="content">

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styled-sizes-break-points/deviceSizes";
 
 export const AboutContainer = styled.div`
     width: 100%;
@@ -9,7 +10,7 @@ export const AboutContainer = styled.div`
 `
 
 export const SectionTitle = styled.div`
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -49,7 +50,7 @@ export const AboutSectionContainer = styled.section`
 
     .image-container{
         width: 50%;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         img{
@@ -58,6 +59,17 @@ export const AboutSectionContainer = styled.section`
             height: min-content;
         }
     }
+
+    @media ${device.tablet} {
+        .image-container{
+            display: flex;
+        }
+        .section-title{
+            width: 50%;
+        }
+    }
+
+
 `
 
 export const ValuesSectionContainer = styled.section`

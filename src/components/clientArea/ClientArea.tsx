@@ -71,7 +71,7 @@ export default function ClientArea() {
                                 <div className="button-container">
                                     <h4>Abertura de Chamado</h4>
 
-                                    <a href="https://psfx.com.br/pws/index.php/pws" target={'_blank'}>
+                                    <a href="https://psfx.com.br/pws/index.php/pws" target={'_blank'} rel="noreferrer">
                                         <span>
                                             Portal Web de Serviços
                                         </span>

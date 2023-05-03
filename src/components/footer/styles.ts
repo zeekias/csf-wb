@@ -24,6 +24,7 @@ export const FooterStyled = styled.footer`
     .content{
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
         list-style: none;

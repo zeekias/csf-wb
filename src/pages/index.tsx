@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Footer from '@/src/components/footer/Footer'
 import Header from '@/src/components/header/Header'
-import Main from '@/src/components/main/Main'
 import Navbar from '@/src/components/navbar/Navbar'
 import NavbarMobile from '@/src/components/navbarMobile/NavbarMobile'
 import { IndexContainer } from './styles/styles'
+// @ts-ignore
+import Main from '@/src/components/main/Main'
 
 export default function Home() {
   const [navBarOption, setNavBarOption] = useState(0);

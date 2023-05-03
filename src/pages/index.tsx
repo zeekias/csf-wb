@@ -4,8 +4,7 @@ import Header from '@/src/components/header/Header'
 import Navbar from '@/src/components/navbar/Navbar'
 import NavbarMobile from '@/src/components/navbarMobile/NavbarMobile'
 import { IndexContainer } from './styles/styles'
-// @ts-ignore
-import Main from '@/src/components/main/Main'
+import MainComponent from '../components/main/Main'
 
 export default function Home() {
   const [navBarOption, setNavBarOption] = useState(0);
@@ -20,7 +19,7 @@ export default function Home() {
         <Header />
         <Navbar navBarOptionNumber={navBarOption} handleNavBarOption={handleNavBarOption} />
         <NavbarMobile navBarOptionNumber={navBarOption} handleNavBarOption={handleNavBarOption} />
-        <Main navBarOptionNumber={navBarOption} handleNavBarOption={handleNavBarOption} />
+        <MainComponent navBarOptionNumber={navBarOption} handleNavBarOption={handleNavBarOption} />
         <Footer />
       </IndexContainer>
       )

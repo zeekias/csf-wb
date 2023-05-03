@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Footer from '../components/footer/Footer'
-import Header from '../components/header/Header'
-import Main from '../components/main/Main'
-import Navbar from '../components/navbar/Navbar'
-import NavbarMobile from '../components/navbarMobile/NavbarMobile'
+import Footer from '@/src/components/footer/Footer'
+import Header from '@/src/components/header/Header'
+import Main from '@/src/components/main/Main'
+import Navbar from '@/src/components/navbar/Navbar'
+import NavbarMobile from '@/src/components/navbarMobile/NavbarMobile'
 import { IndexContainer } from './styles/styles'
 
 export default function Home() {

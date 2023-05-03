@@ -1,6 +1,5 @@
 import React from 'react'
 import About from '../about/About'
-import Budget from '../budget/Budget'
 import ClientArea from '../clientArea/ClientArea'
 import Contact from '../contact/Contact'
 import Home from '../home/Home'
@@ -12,7 +11,7 @@ interface iProps{
   handleNavBarOption: (optionNumber: number)=>void;
 }
 
-export  function Main(props: iProps) {
+export default function MainComponent(props: iProps) {
   function handleSubComponentMain(navBarOptionNumber: number){
     switch(navBarOptionNumber){
       case 0:

@@ -4,7 +4,7 @@ import Header from '@/src/components/header/Header'
 import Navbar from '@/src/components/navbar/Navbar'
 import NavbarMobile from '@/src/components/navbarMobile/NavbarMobile'
 import { IndexContainer } from './styles/styles'
-import {Main} from '@/src/components/main/Main'
+import Main from '@/src/components/main/MainComponent'
 
 export default function Home() {
   const [navBarOption, setNavBarOption] = useState(0);
